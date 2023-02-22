@@ -1,0 +1,297 @@
+.section_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 39px;   
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 0px;
+    top: 82px;
+}
+    .head_section2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+        gap: 842px;
+        width: 1170px;
+        height: 42px;
+    }
+        .t_cotacoes {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 42px;
+            letter-spacing: -0.04em;
+            color: #333333;
+        }
+        .btn_coin {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 8px; 
+            background: #FFFFFF;   
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            
+        }
+            .texto_coin {
+                width: 125px;
+                height: 21px;  
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                letter-spacing: -0.04em;
+                color: #333333;
+            }
+            .chevron_down {
+
+                display: flex;
+                justify-content: center;
+                align-content: center;                
+            }
+                .vector_down {            
+                    height: 6px;
+                    width: 12px;
+                    left: 6px;
+                    top: 9px;
+                    border-radius: 0px;                   
+                }
+                .table_list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0px;
+                    gap: 19px;                   
+                    width: 1170px;
+                    height: 601px;
+                    
+                }
+                    .head_list {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 3px 25px 3px 40px;
+                        gap: 266px;                                
+                    }
+                        .t_moedas {
+                            width: 41px;
+                            height: 16px;                           
+                            font-family: 'Roboto';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: -0.04em;                        
+                            color: #828282;
+                        }
+                        .frame28 {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            padding: 0px 0px 0px 196px;
+                            gap: 112px;
+                        }
+                            .minima {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                padding: 0px;
+                                     
+                            }
+                                .t_minima {                                                             
+                                    font-family: 'Roboto';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: -0.04em;
+                                    color: #828282;
+                                }
+                            .maxima {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                padding: 0px;
+                                
+                                
+                            }
+                                .t_maxima {
+                                    font-family: 'Roboto';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: -0.04em;
+                                    color: #828282;
+                                }
+                        .variacao {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;  
+                            width: 76px;
+                            height: 24px;
+                        }
+                            .t_variacao {
+                                font-family: 'Roboto';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 16px;
+                                letter-spacing: -0.04em;
+                                color: #828282;
+                            }
+                            .chevron_up {
+                                display: flex;
+                                justify-content: center;
+                                align-content: center;
+                                transform: rotate(-180deg);
+                            }
+                    .section_list_interno {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 0px;
+                        gap: 8px;   
+                    }
+                        .frame14 {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;   
+                            gap: 291px;                           
+                            width: 1170px;
+                            height: 104px;                           
+                            background: #FFFFFF;
+                            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+                            border-radius: 8px;
+                        }
+                            .frame9 {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                padding: 0px;
+                                gap: 16px;                               
+                                width: 213px;
+                                height: 72px;
+                            }
+                            .bold2 {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                width: 72px;
+                                height: 72px;
+                                background: #F4C23B;
+                                border-radius: 99px;  
+                                }
+                                    .dolar-sign2 {
+                                        width: 24px;
+                                        height: 24px;
+                                    }
+                                .frame8 {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    padding: 0px;
+                                    gap: 4px;
+                                    width: 125px;
+                                    height: 41px;
+                                }
+                                    .t_frame8 {
+                                        width: 125px;
+                                        height: 21px;
+                                        font-family: 'Roboto';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 21px;
+                                        letter-spacing: -0.04em;
+                                        color: #333333;
+                                    }
+                                    .t_data {
+                                        width: 70px;
+                                        height: 16px;
+                                        font-family: 'Roboto';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                        letter-spacing: -0.04em;
+                                        color: #828282;
+                                    }
+                            .frame11 {
+                                display: flex;
+                                height: 21px;
+                                width: 251px;
+                                left: 536px;
+                                top: 41.5px;
+                                border-radius: 0px;                    
+                            }
+                                .t_min {
+                                    position: relative;
+                                    width: 53px;
+                                    height: 21px;
+                                    left: 20px;
+                                    top: 0px;
+                                    font-family: 'Roboto';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 21px;
+                                    letter-spacing: -0.04em;
+                                    color: #333333;
+                                }
+                                    .chevron_down {
+                                        display: flex;
+                                        width: 24px;
+                                        height: 24px;
+                                    }
+                                .t_max {
+                                    position: relative;
+                                    width: 53px;
+                                    height: 21px;
+                                    left: 146px;
+                                    top: 0px;
+                                    font-family: 'Roboto';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 21px;
+                                    letter-spacing: -0.04em;
+                                }
+                                    .chevron_up {
+                                        display: flex;
+                                        width: 24px;
+                                        height: 24px;
+                                        transform: rotate(-180deg);
+                                    }
+                            .frame10 {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-items: center;
+                                padding: 8px 12px;
+                                gap: 10px;
+                                background: #F4C23B;
+                                border-radius: 8px;
+                            }
+                                .t_frame10 {
+                                    width: 36px;
+                                    height: 21px;
+                                    font-family: 'Roboto';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 21px;
+                                    letter-spacing: -0.04em;
+                                    color: #333333;
+                                }
