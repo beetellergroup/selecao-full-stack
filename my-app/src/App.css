@@ -1,0 +1,9 @@
+.background {
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(236, 246, 255, 0.3);
+}
