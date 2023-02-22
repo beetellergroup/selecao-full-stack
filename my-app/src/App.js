@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './NavTop.css';
+import activity from './activity.svg';
+import logobeeteller from './logobeeteller.svg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function NavTop(props) {
+    return (
+        <div className="nav-top">
+            <div className='nav-infos'>
+                <div className='logos'>
+                    <nav className='logo-beeteller'>
+                        <nav className='b'><img src={logobeeteller} alt='b'></img></nav>
+                    </nav>
+                    <nav className='divider'></nav>
+                    <nav className='cotacoes'>
+                        <nav className='t-cotacoes'>cotações</nav>
+                        <nav className='activity'>
+                            <nav className='v-activity'><img src={activity} alt='activity'></img></nav>
+                        </nav>     
+                    </nav>
+                </div>
+                <div className='idioma'>EN</div>
+            </div>
+        </div>     
+    );
 }
-
-export default App;
+export default NavTop;
