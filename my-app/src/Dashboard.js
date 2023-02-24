@@ -12,7 +12,7 @@ function Coin(props){
                    <div className='frame2'>
                        <div className='t-coin'>{props.coin}</div>
                        <div className='frame1'>
-                           <div className='t-rs'>R$</div>
+                           <div className='t-rs'>{props.sign}</div>
                            <div className='t-valor'>{props.valor}</div>
                        </div>
                        <div className='t-dolar'>{props.content}</div>
@@ -75,6 +75,8 @@ function Dashboard() {
        let valorNumerico2 = parseFloat(valorString2);
        let valorArredondado2 = valorNumerico2.toFixed(2);
        let valorArredondadoString2 = valorArredondado2.toString();
+       let numeroString2 = valorArredondadoString2;
+       let numeroComVirgula2 = numeroString2.replace(".", ",");
    
    const [USD3, set3] = useState({}); 
 
@@ -93,6 +95,8 @@ function Dashboard() {
       let valorNumerico3 = parseFloat(valorString3);
       let valorArredondado3 = valorNumerico3.toFixed(2);
       let valorArredondadoString3 = valorArredondado3.toString();
+      let numeroString3 = valorArredondadoString3;
+      let numeroComVirgula3 = numeroString3.replace(".", ",");
 
     return (
     <div className='section-dashboard'>
@@ -103,9 +107,9 @@ function Dashboard() {
             </div> 
         </div>
         <div className='cards-coin'>
-            <Coin coin="BLR/USD" content="Dólar comercial" valor={numeroComVirgula} imagem={dolarimg}/>
-            <Coin coin="BTC/EUR" content=""  valor={valorArredondadoString2} imagem={figmaimg}/>
-            <Coin coin="BTC/USD" content="" valor={valorArredondadoString3} imagem={figmaimg}/>               
+            <Coin coin="BLR/USD" content="Dólar comercial" valor={numeroComVirgula} imagem={dolarimg} sign={"R$"}/>
+            <Coin coin="BTC/EUR" content=""  valor={numeroComVirgula2} imagem={figmaimg} sign={"€"}/>
+            <Coin coin="BTC/USD" content="" valor={numeroComVirgula3} imagem={figmaimg} sign={"$"} />               
         </div>
     </div>   
     );
