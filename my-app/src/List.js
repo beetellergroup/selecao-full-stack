@@ -5,13 +5,19 @@ import { useState, useEffect } from "react";
 import down from './down.svg';
 
 function Frame(props){
-
     const timestamp = props.timestamp*1000;
     const data = new Date(timestamp);
     const dia = data.getDate().toString().padStart(2, '0');
     const mes = (data.getMonth() + 1).toString().padStart(2, '0');
     const ano = data.getFullYear().toString();
     const dataHoraFormatada = `${dia}/${mes}/${ano}`;
+    const pctChange=props.pctChange
+
+    let numeroString = pctChange;
+    let numero = parseFloat(numeroString);
+    if (numero > 0) {
+        numeroString = "+" + numeroString;
+    }
 
 return(
     <div class="frame14">
@@ -31,47 +37,65 @@ return(
         <div class="t_min">{props.low}</div>
         <div class="t_max">{props.high}</div>
     </div>
-    <div class="frame10">
-        <div class="t_frame10">{props.pctChange}</div>
+    <div className={ numeroString>=0 ? "frame10" : "frame10b"}>
+        <div class="t_frame10" >{numeroString+"%"}</div>
     </div>
 </div>
 );
 }
 
-function Inter(props) {
-    const [data, setData] = useState([]);
-  
-    function fetchData() {
-      fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/15')
-        .then(response => response.json())
-        .then(data => setData(data));
+function List() {
+
+    function Inter(props) {
+        const [data, setData] = useState([]);
+
+        function fetchData() {
+    
+          fetch(url[selectedOption])
+            .then(response => response.json())
+            .then(data => setData(data));
+        }
+    
+        useEffect(() => {
+            fetchData();
+          }, []);
+      
+        return (
+                <ul className={props.className}>
+                {data.map(item => (
+                    <ui><Frame  high={item.high} low={item.low} pctChange={item.pctChange} timestamp={item.timestamp} moeda={props.moeda}/></ui> 
+                ))}
+                </ul>
+        );
     }
 
-    useEffect(() => {
-        fetchData();
-      }, []);
-  
-    return (
-            <ul className={props.className}>
-            {data.map(item => (
-                <ui><Frame  high={item.high} low={item.low} pctChange={item.pctChange} timestamp={item.timestamp} moeda={"Dólar Americano"}/></ui> 
-            ))}
-            
-            </ul>
-    );
-  }
+    const [selectedOption, setSelectedOption] = useState('1');
+    
+    const handleSelectChange = (event) => {
+      setSelectedOption(event.target.value);
+    }
 
-function List() {
+    const url = {
+        "1":"https://economia.awesomeapi.com.br/json/daily/USD-BRL/15",
+        "2":"https://economia.awesomeapi.com.br/json/daily/EUR-BRL/15",
+        "3":"https://economia.awesomeapi.com.br/json/daily/BTC-BRL/15"
+     }
+
+     const moeda = {
+        "1":"Dólar americano",
+        "2":"Euro",
+        "3":"Bitcoin"
+     }
+     
     return (
         <div class="section_list">
         <div class="head_section2">
             <div class="t_cotacoes">Cotações</div>
-            <div class="btn_coin">
-                <div class="texto_coin">Dólar americano</div>
-                <div class="chevron_down">
-                    <div class="vector_down"><img src={down} alt='down' ></img></div>
-                </div>
-            </div>
+                <select class="btn_coin"  value={selectedOption} onChange={handleSelectChange}>
+                    <option value='1' >Dólar americano</option>
+                    <option value='2' >Euro</option>
+                    <option value='3' >Bitcoin</option>
+                </select>
         </div>
         <div class="table_list">
             <div class="head_list">
@@ -98,7 +122,7 @@ function List() {
                 </div>
             </div>
             <div class="section_list_interno">
-                <Inter className="section_list_interno"/>            
+                    <Inter className="section_list_interno" moeda={moeda[selectedOption]}/>            
             </div>
         </div>
     </div>

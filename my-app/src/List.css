@@ -32,25 +32,30 @@
         .btn_coin {
             display: flex;
             flex-direction: row;
-            align-items: center;
-            padding: 8px 16px;
-            gap: 8px; 
+            padding-top: 9.5px;
+            padding-left: 16px;
+            padding-right: 51px;
+            padding-bottom: 9.5px; 
             background: #FFFFFF;   
             border: 1px solid #E0E0E0;
             border-radius: 4px;
-            
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.04em;
+            color: #333333;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('down.svg');
+            background-repeat: no-repeat;
+            background-position-x: 155px;
+            background-position-y: center;
+            outline: none;
+                      
         }
-            .texto_coin {
-                width: 125px;
-                height: 21px;  
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 21px;
-                letter-spacing: -0.04em;
-                color: #333333;
-            }
             .chevron_down {
 
                 display: flex;
@@ -280,13 +285,20 @@
                                 align-items: center;
                                 justify-items: center;
                                 padding: 8px 12px;
-                                gap: 10px;
+                                
                                 background: #F4C23B;
                                 border-radius: 8px;
                             }
+                            .frame10b{
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-items: center;
+                                padding: 8px 12px;
+                                background: #aeaeac83;
+                                border-radius: 8px;
+                            }
                                 .t_frame10 {
-                                    width: 36px;
-                                    height: 21px;
                                     font-family: 'Roboto';
                                     font-style: normal;
                                     font-weight: 500;

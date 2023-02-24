@@ -57,7 +57,6 @@ function Dashboard() {
        let numeroString = valorArredondadoString;
        let numeroComVirgula = numeroString.replace(".", ",");
 
-
    const [USD2, set2] = useState({}); 
 
    const fetch2 = () => { 
