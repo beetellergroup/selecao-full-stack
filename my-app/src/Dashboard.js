@@ -5,141 +5,107 @@ import group2 from "./group2.svg"
 import dolarsign from "./dolarsign.svg"
 import figma from "./figma.svg"
 
+function Coin(props){
+   return(
+           <div className='coin'>
+               <div className='frame4'>
+                   <div className='frame2'>
+                       <div className='t-coin'>{props.coin}</div>
+                       <div className='frame1'>
+                           <div className='t-rs'>R$</div>
+                           <div className='t-valor'>{props.valor}</div>
+                       </div>
+                       <div className='t-dolar'>{props.content}</div>
+                   </div>
+                   <div className='bold'>
+                       <div className='dolar-sign'>{props.imagem}</div>
+                   </div>
+               </div>
+           </div>
+   );
+}
+
 function Dashboard() {
 
-    function Coin(props){
+   const figmaimg = <img src={figma} alt='figma'/>;
+   const dolarimg = <img src={dolarsign} alt='figma'/>;
 
-        const [USD, setUSD] = useState({}); 
-    
-        const fetchUSD = () => { 
-            fetch(`https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL`) 
-              .then((response) => response.json()) 
-              .then((jsonUSD) => setUSD(jsonUSD.USDBRL)) 
-              .catch((error) => console.log(error)); 
-        }; 
-         
-          useEffect(() => { 
-            fetchUSD(); 
-          }, []);
-    
-            let valorString = USD.bid;
-            let valorNumerico = parseFloat(valorString);
-            let valorArredondado = valorNumerico.toFixed(2);
-            let valorArredondadoString = valorArredondado.toString();
-            let numeroString = valorArredondadoString;
-            let numeroComVirgula = numeroString.replace(".", ",");
-    
-    
-        return(
-                <div className='coin'>
-                    <div className='frame4'>
-                        <div className='frame2'>
-                            <div className='t-coin'>{props.coin}</div>
-                            <div className='frame1'>
-                                <div className='t-rs'>R$</div>
-                                <div className='t-valor'>{numeroComVirgula}</div>
-                            </div>
-                            <div className='t-dolar'>{props.content}</div>
-                        </div>
-                        <button className='bold' onClick={fetchUSD}>
-                            <div className='dolar-sign'><img src={dolarsign} alt='dolarsign'></img></div>
-                        </button>
-                    </div>
-                </div>
-        );
-    }
-    
-    function Coin2(props){
-    
-        const [USD, setUSD] = useState({}); 
-    
-        const fetchUSD = () => { 
-            fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTeur`) 
-              .then((response) => response.json()) 
-              .then((jsonUSD) => setUSD(jsonUSD.result.XXBTZEUR.a)) 
-              .catch((error) => console.log(error)); 
-        }; 
-         
-          useEffect(() => { 
-            fetchUSD(); 
-          }, []);
-    
-            let valorString = USD[0];
-            let valorNumerico = parseFloat(valorString);
-            let valorArredondado = valorNumerico.toFixed(2);
-            let valorArredondadoString = valorArredondado.toString();
-          
-        return(
-                <div className='coin'>
-                    <div className='frame4'>
-                        <div className='frame2'>
-                            <div className='t-coin'>{props.coin}</div>
-                            <div className='frame1'>
-                                <div className='t-rs'>$</div>
-                                <div className='t-valor'>{valorArredondadoString}</div>
-                            </div>
-                            <div className='t-dolar'>{props.content}</div>
-                        </div>
-                        <button className='bold' onClick={fetchUSD}>
-                            <div className='dolar-sign'><img src={figma} alt='figma'></img></div>
-                        </button>
-                    </div>
-                </div>
-        );
-    }
-    
-    function Coin3(props){
 
+   function handleClick (){
+      fetchUSD();
+      fetch2();
+      fetch3()
+   }
+
+   const [USD, setUSD] = useState({}); 
+
+   const fetchUSD = () => { 
+       fetch(`https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL`) 
+         .then((response) => response.json()) 
+         .then((jsonUSD) => setUSD(jsonUSD.USDBRL)) 
+         .catch((error) => console.log(error));
+   }; 
+    
+     useEffect(() => { 
+       fetchUSD(); 
+     }, []);
+
+       let valorString = USD.bid;
+       let valorNumerico = parseFloat(valorString);
+       let valorArredondado = valorNumerico.toFixed(2);
+       let valorArredondadoString = valorArredondado.toString();
+       let numeroString = valorArredondadoString;
+       let numeroComVirgula = numeroString.replace(".", ",");
+
+
+   const [USD2, set2] = useState({}); 
+
+   const fetch2 = () => { 
+      fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTeur`) 
+      .then((response) => response.json()) 
+      .then((jsonUSD) => set2(jsonUSD.result.XXBTZEUR.a)) 
+      .catch((error) => console.log(error)); 
+   }; 
+    
+     useEffect(() => { 
+       fetch2(); 
+     }, []);
+
+       let valorString2 = USD2[0];
+       let valorNumerico2 = parseFloat(valorString2);
+       let valorArredondado2 = valorNumerico2.toFixed(2);
+       let valorArredondadoString2 = valorArredondado2.toString();
+   
+   const [USD3, set3] = useState({}); 
+
+   const fetch3 = () => { 
+      fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTusd`) 
+      .then((response) => response.json()) 
+      .then((jsonUSD) => set3(jsonUSD.result.XXBTZUSD.a)) 
+      .catch((error) => console.log(error));        
+      }; 
         
+      useEffect(() => { 
+         fetch3(); 
+      }, []);
     
-        const [USD, setUSD] = useState({}); 
-    
-        const fetchUSD = () => { 
-            fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTusd`) 
-              .then((response) => response.json()) 
-              .then((jsonUSD) => setUSD(jsonUSD.result.XXBTZUSD.a)) 
-              .catch((error) => console.log(error)); 
-        }; 
-         
-          useEffect(() => { 
-            fetchUSD(); 
-          }, []);
-    
-          let valorString = USD[0];
-          let valorNumerico = parseFloat(valorString);
-          let valorArredondado = valorNumerico.toFixed(2);
-          let valorArredondadoString = valorArredondado.toString();
-    
-        return(
-                <div className='coin'>
-                    <div className='frame4'>
-                        <div className='frame2'>
-                            <div className='t-coin'>{props.coin}</div>
-                            <div className='frame1'>
-                                <div className='t-rs'>$</div>
-                                <div className='t-valor'>{valorArredondadoString}</div>
-                            </div>
-                            <div className='t-dolar'>{props.content}</div>
-                        </div>
-                        <button className='bold' onClick={fetchUSD}>
-                            <div className='dolar-sign'><img src={figma} alt='figma'></img></div>
-                        </button>
-                    </div>
-                </div>
-        );
-    }
+      let valorString3 = USD3[0];
+      let valorNumerico3 = parseFloat(valorString3);
+      let valorArredondado3 = valorNumerico3.toFixed(2);
+      let valorArredondadoString3 = valorArredondado3.toString();
+
     return (
     <div className='section-dashboard'>
         <div className='head-section'>
             <div className='t-moedas'>Moedas</div>
             <div className='refresh-cw'>
-                <button className='group2' ><img src={group2} alt='b'></img></button>
+                <button className='group2' onClick={handleClick} ><img src={group2} alt='b'></img></button>
             </div> 
         </div>
         <div className='cards-coin'>
-            <Coin coin="BLR/USD" content="Dólar comercial" />
-            <Coin2 coin="BTC/EUR" content=""  />
-            <Coin3 coin="BTC/USD" content="" />               
+            <Coin coin="BLR/USD" content="Dólar comercial" valor={numeroComVirgula} imagem={dolarimg}/>
+            <Coin coin="BTC/EUR" content=""  valor={valorArredondadoString2} imagem={figmaimg}/>
+            <Coin coin="BTC/USD" content="" valor={valorArredondadoString3} imagem={figmaimg}/>               
         </div>
     </div>   
     );
