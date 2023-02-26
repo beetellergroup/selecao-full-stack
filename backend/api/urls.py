@@ -17,3 +17,4 @@ urlpatterns = [
     path('USD-BRL/15/', USD2APIView.as_view()),
     path('EUR-BRL/15/', EUR2APIView.as_view()),
     path('BTC-BRL/15/', BTC2APIView.as_view()),
+]

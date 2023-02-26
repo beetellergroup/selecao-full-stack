@@ -79,4 +79,4 @@ class BTC2APIView(APIView):
     def get(self, request):
         response = requests.get("https://economia.awesomeapi.com.br/json/daily/BTC-BRL/15")
         data = response.json()
-        return Response(data) 
+        return Response(data)  
