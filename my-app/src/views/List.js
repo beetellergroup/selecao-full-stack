@@ -1,8 +1,8 @@
 import React from 'react';
-import './List.css';
-import dolarsign from './dolarsign.svg'
+import './styles/List.css';
+import dolarsign from './Icons/dolarsign.svg'
 import { useState, useEffect } from "react";
-import down from './down.svg';
+import down from './Icons/down.svg';
 
 function Frame(props){
     const timestamp = props.timestamp*1000;
@@ -76,9 +76,9 @@ function List() {
     }
 
     const url = {
-        "1":"https://economia.awesomeapi.com.br/json/daily/USD-BRL/15",
-        "2":"https://economia.awesomeapi.com.br/json/daily/EUR-BRL/15",
-        "3":"https://economia.awesomeapi.com.br/json/daily/BTC-BRL/15"
+        "1":"http://localhost:8000/api/USD-BRL/15/",
+        "2":"http://localhost:8000/api/EUR-BRL/15/",
+        "3":"http://localhost:8000/api/BTC-BRL/15/"
      }
 
      const moeda = {

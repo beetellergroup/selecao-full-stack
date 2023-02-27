@@ -1,7 +1,7 @@
 import React from 'react';
-import './NavTop.css';
-import activity from './activity.svg';
-import logobeeteller from './logobeeteller.svg';
+import './styles/NavTop.css';
+import activity from './Icons/activity.svg';
+import logobeeteller from './Icons/logobeeteller.svg';
 
 function NavTop(props) {
     return (
