@@ -1,9 +1,9 @@
 import React from 'react';
-import './Dashboard.css';
+import './styles/Dashboard.css';
 import { useState, useEffect } from "react";
-import group2 from "./group2.svg"
-import dolarsign from "./dolarsign.svg"
-import figma from "./figma.svg"
+import group2 from "./Icons/group2.svg"
+import dolarsign from "./Icons/dolarsign.svg"
+import figma from "./Icons/figma.svg"
 
 function Coin(props){
    return(
@@ -40,7 +40,7 @@ function Dashboard() {
    const [USD, setUSD] = useState({}); 
 
    const fetchUSD = () => { 
-       fetch(`https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL`) 
+       fetch("http://localhost:8000/api/USD-BRL/") 
          .then((response) => response.json()) 
          .then((jsonUSD) => setUSD(jsonUSD.USDBRL)) 
          .catch((error) => console.log(error));
@@ -60,7 +60,7 @@ function Dashboard() {
    const [USD2, set2] = useState({}); 
 
    const fetch2 = () => { 
-      fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTeur`) 
+      fetch("http://localhost:8000/api/XBTeur/") 
       .then((response) => response.json()) 
       .then((jsonUSD) => set2(jsonUSD.result.XXBTZEUR.a)) 
       .catch((error) => console.log(error)); 
@@ -80,7 +80,7 @@ function Dashboard() {
    const [USD3, set3] = useState({}); 
 
    const fetch3 = () => { 
-      fetch(`https://api.kraken.com/0/public/Ticker?pair=XBTusd`) 
+      fetch("http://localhost:8000/api/XBTusd/") 
       .then((response) => response.json()) 
       .then((jsonUSD) => set3(jsonUSD.result.XXBTZUSD.a)) 
       .catch((error) => console.log(error));        
