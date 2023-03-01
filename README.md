@@ -7,7 +7,7 @@ Passo a passo para rodar as aplicações
 -Navegue até a pasta backend(Obs. existem duas pastas chamadas backend. Todos os 
 comandos a seguir são executados dentro da primeira pasta, não na pasta mais interna de mesmo nome)
 
--É necessário ter e o comando pip instalado.
+-É necessário ter e o python 3.11 e o comando pip instalado.
 
 -Dentro da pasta backend pelo terminal(recomendo o terminal do VScode) execute o comando : pip install -r requirements.txt
 
@@ -16,7 +16,9 @@ comandos a seguir são executados dentro da primeira pasta, não na pasta mais i
 execute os seguintes comandos:
 python -m pip install Django
 
-pip install djangorestframework django-cors-headers==3.11.0 djangorestframework-simplejwt==5.0.0 PyJWT==2.3.0 
+pip install djangorestframework django-cors-headers==3.11.0 djangorestframework-simplejwt==5.0.0 PyJWT==2.3.0
+
+pip install requests
 
 -Ainda dentro da mesma pasta backend execute o comando: python manage.py migrate
 
@@ -37,7 +39,8 @@ Seguindo agora com a parte front-end
 npm install --global yarn 
 
 -Ainda dentro da pasta selecionada execute o comendo: npx create-react-app frontend
-cd frontend 
+
+-cd frontend 
 
 -Dentro da  pasta execute: yarn add axios dayjs jwt-decode react-router-dom@5.2.0
 
