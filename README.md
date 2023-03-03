@@ -1,58 +1,56 @@
-Passo a passo para rodar as aplicações 	
+Dashboard de cotações de moedas
 
--Baixe o arquivo .zip no repositório do GitHub
+	O projeto em questão trata-se de um dashboard que apresenta a cotação de moedas que foi desenvolvido durante um processo seletivo para a empresa Beeteller. O objetivo do projeto é justamente avaliar as habilidades dos aspirantes a desenvolvedor fullstack da empresa. A aplicação integra um app React.js no front-end e um app Django no back-end. A aplicação front-end conta com uma página de login, onde os dados de login são enviados para autenticação através da API backend que em seguida retorna um token JWT que é então verificado na aplicação front-end antes de liberar a página do dashboard de cotações. A API então cumpre a função de cadastro e armazenamento de dados de usuários, além de retransmitir dados consumidos através de uma API de cotações de moedas externa. 
 
--Clique em extrair tudo.
+Motivações para escolha das tecnologias envolvidas
 
--Navegue até a pasta backend(Obs. existem duas pastas chamadas backend. Todos os 
-comandos a seguir são executados dentro da primeira pasta, não na pasta mais interna de mesmo nome)
+	Para esse tipo de aplicação existem muitas bibliotecas e frameworks capazes de entregar excelentes resultados, inclusive o uso de JavaScript puro e node.js seria perfeitamente possível.
+	Conforme os interesses da empresa em questão, seria preferível o uso da biblioteca React para o front-end e node.js ou Django para o back-end, mas foi deixado bem claro que poderia ser usado a tecnologia que o candidato se sinta mais confortável e com maior performance. O Django web framework é uma excelente escolha para aplicações back-end. Trata-se de uma ferramenta robusta, fácil de escalar e com uma grande gama de recursos nativos para aplicações como autenticação de usuário, ORM (Object Relational Model) para manipulação de banco de dados, views baseadas em classes genéricas entre outros recursos que tornam o desenvolvimento de APIs muito mais rápido e inclusive com bastante recursos de segurança. Permitindo assim que o desenvolvedor possa dedicar mais tempo configurando e resolvendo problemas relacionados às regras de negócios e menos problemas relacionados à codificação.
 
--É necessário ter e o python 3.11 e o comando pip instalado.
+Passo a passo para iniciar as aplicações
 
--Dentro da pasta backend pelo terminal(recomendo o terminal do VScode) execute o comando : pip install -r requirements.txt
+Back-end
 
--Em alguns casos algumas versões dos requerimentos são ignorados então se for o caso
+É necessário instalar 
+-Python 3.11
+-Instale o pip(windows) ou pip3(linux)
+-Instale o django: pip install django
+-Instale o Django REST Framework: pip install djangorestframework
+-pip install djangorestframework django-cors-headers==3.11.0 djangorestframework-simplejwt==5.0.0 PyJWT==2.3.0 
+-git clone o repositório ou baixe o arquivo.zip e extraia se preferir
+-No mesmo repositório onde estiver o arquivo ‘manage.py’ execute o comando:
+python manage.py runserver
 
-execute os seguintes comandos:
-python -m pip install Django
+O servidor está configurado por padrão para rodar na porta http://127.0.0.1:8000/
+Você pode então desejar rodar essa aplicação em outra porta por exemplo: http://0.0.0.0:8000/ lembrando que a aplicação front-end está configurada para a porta padrão. Então caso essa configuração seja alterada lembre de alterar em ambos os casos.
 
-pip install djangorestframework django-cors-headers==3.11.0 djangorestframework-simplejwt==5.0.0 PyJWT==2.3.0
+A escolha da porta fica a critério das suas necessidades. Por exemplo, caso você deseje rodar essa aplicação em um servidor na nuvem e deseja usar a configuração de ip público da máquina, é interessante usar http://0.0.0.0:8000/
 
-pip install requests
+Na maioria dos casos essas configurações são suficientes para iniciar a aplicação mas pode ocorrer um caso ou outro de ser necessário adicionar algum módulo remanescente.
+O arquivo de requerimentos contém uma lista muito extensa de módulos e se preferir pode executa-lo: -pip install -r requirements.txt
 
--Ainda dentro da mesma pasta backend execute o comando: python manage.py migrate
+A partir deste ponto já é possível verificar o funcionamento da nossa API. Abra o seu navegador no endereço http://127.0.0.1:8000/ você verá o modo debug indicando as rotas configuradas na raiz, nesse caso /admin e /api.
 
-Agora execute o comando: python manage.py runserver
-O servidor vai ser executado na porta: http://127.0.0.1:8000/
-abra o navegador e use: http://127.0.0.1:8000/api/register/
-pela interface do DRF é possivel que você registre um usuário e senha. 
-Por questões de simplicidade para os testes, é permitido qualquer nome de usuário
-e uma senha com ao menos um caracter especial, por exemplo: password@123
+Navegando até http://127.0.0.1:8000/api você verá a lista com as rotas da API de cotações. 
+[
+    "/api/token/",
+    "/api/register/",
+    "/api/token/refresh/"
+]
+Veja que temos "/api/token/" onde o front-end envia os dados de login e recebe de volta um token JWT para acessar a página privada de dashboard. Em "/api/register/" temos a rota para o registro de usuários e por fim a ultima rota para renovar a seção de usuário sem ser necessário solicitar novamente e-mail e senha.
 
--Após o cadastro, vá até a rota http://127.0.0.1:8000/api/token/ e teste o usuário cadastrado. Se tudo estiver ok, será retornado um Token JWT. Nesse projeto, essa é a principal função dessa API, registrar e verificar as credenciais de um cliente front-end.
-Alguns funcionalidades foram adicionadas como consumo de API externa e resposta mas sem muita complexidade nas views. Inclusive esse consumo poderia ser realizado diretamente entre o front-end e a API de cotação de moedas. Com isso a parte back-end da aplicação está finalizada.
+Front-end
 
-Seguindo agora com a parte front-end
+É necessário que você tenha o node.js instalado 
 
--É necessário que você tenha o node.js instalado 
--Crie uma pasta navegue até ela e execute pelo terminal o comando 
-npm install --global yarn 
+No mesmo diretório onde se encontra o arquivo yarn.lock
 
--Ainda dentro da pasta selecionada execute o comendo: npx create-react-app frontend
+-npm install
 
--cd frontend 
+-npm install yarn 
+-Dentro do mesmo diretório execute: yarn add axios dayjs jwt-decode react-router-dom@5.2.0
 
--Dentro da  pasta execute: yarn add axios dayjs jwt-decode react-router-dom@5.2.0
-
--  E vamos testar a configuração inicial executando: yarn start
-
-Se tudo estiver ok,em  http://localhost:3000/  estará a configuração inicial de um app react.
-
--Dentro do arquivo .zip que foi baixado do repositório do GitHub, há uma pasta my-app, abra a pasta e copie duas das pastas em seu interior:  src e public
-
--Substitua (apague primeiro as de mesmo nome para evitar problemas) as pastas do app criado pelas pastas do arquivo baixado pelo GitHub.
-
--Execute novamente dentro da pasta frontend: yarn start
+-npm start ou yarn start
 
 -Em http://localhost:3000/   desta vez você verá a página de login da aplicação front-end. 
 
