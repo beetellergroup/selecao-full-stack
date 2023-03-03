@@ -5,6 +5,7 @@ do projeto é justamente avaliar as habilidades dos aspirantes a desenvolvedor f
 no back-end. A aplicação front-end conta com uma página de login, onde os dados de login são enviados para autenticação através da API backend que em seguida retorna 
 um token JWT que é então verificado na aplicação front-end antes de liberar a página do dashboard de cotações. A API então cumpre a função de cadastro e armazenamento 
 de dados de usuários, além de retransmitir dados consumidos através de uma API de cotações de moedas externa. 
+
 Motivações para escolha das tecnologias envolvidas
 
 Para esse tipo de aplicação existem muitas bibliotecas e frameworks capazes de entregar excelentes resultados, inclusive o uso de JavaScript puro e node.js seria 
