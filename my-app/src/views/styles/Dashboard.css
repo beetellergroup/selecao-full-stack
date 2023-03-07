@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.section-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 0px;
+    top: 38px;
+  }
+  .head-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 978px;    
+    width: 1170px;
+    height: 42px;
+  }
+    .t-moedas {
+        width: 123px;
+        height: 42px;
+        font-family:'roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 42px;
+        letter-spacing: -0.04em;
+        color: #333333; 
+    }
+    .refresh-cw {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3px 1px;
+        gap: 10px;  
+      }
+      .group2 {
+        border:none;
+        background:none;
+      }
+  .cards-coin {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;    
+  }
+    .coin {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 10px;    
+        background: #FFFFFF;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;  
+    }
+      .frame4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px;    
+        width: 321px;
+        height: 141px;  
+      }
+        .frame2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 24px;        
+            width: 116px;
+            height: 141px;
+        }
+          .t-coin {
+            width: 78px;
+            height: 21px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.04em;
+            color: #333333; 
+          }
+          .frame1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 8px;            
+            width: 116px;
+            height: 56px;
+          }
+            .t-rs {
+                width: 21px;
+                height: 21px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                letter-spacing: -0.04em;
+                color: #828282;
+            }
+            .t-valor {
+                width: 87px;
+                height: 56px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 48px;
+                line-height: 56px;
+                letter-spacing: -0.04em;
+                color: #333333;
+            }
+        .t-dolar {
+            width: 120px;
+            height: 16px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            color: #828282;
+          }
+        .bold {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;            
+            background: #F4C23B;
+            border-radius: 99px; 
+            border: none;
+        }
+          .dolar-sign {
+            display: flex;
+            width: 24px;
+            height: 24px;
+          }
